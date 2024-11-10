@@ -1,6 +1,5 @@
 extends RigidBody2D
 
-var spawn = preload("res://Escenas/area_2d.gd")
 var is_clicked = false
 var on_basura = false
 

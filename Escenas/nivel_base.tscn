@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cj5p5mxl0a5hh" path="res://canecas/aprovechables.tscn" id="4_uj13o"]
 [ext_resource type="PackedScene" uid="uid://cgnlhi3swikgc" path="res://canecas/no_aprovechables.tscn" id="5_lnw37"]
 [ext_resource type="PackedScene" uid="uid://b3w888fry7c6c" path="res://canecas/organicos.tscn" id="6_w7obc"]
-[ext_resource type="Script" path="res://Objetos/area_2d.gd" id="7_7nvff"]
+[ext_resource type="Script" path="res://Objetos/Basuras/spawn_basura.gd" id="7_7nvff"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_yyq26"]
 
