@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://cinl0vk3d1pwf"]
+
+[ext_resource type="Script" path="res://Objetos/Basuras/basura.gd" id="1_300us"]
+[ext_resource type="Texture2D" uid="uid://bsefy27etum0v" path="res://icon.svg" id="2_lga8w"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o20r8"]
+size = Vector2(64, 64)
+
+[node name="Basura" type="RigidBody2D" groups=["Basura"]]
+gravity_scale = 0.0
+constant_force = Vector2(-60, 0)
+script = ExtResource("1_300us")
+
+[node name="Icon" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_lga8w")
+
+[node name="Area2D" type="Area2D" parent="." groups=["Basura"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_o20r8")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+scale = Vector2(3, 3)
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

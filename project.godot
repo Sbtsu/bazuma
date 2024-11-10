@@ -1,0 +1,39 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="Bazuma"
+run/main_scene="res://Escenas/escena_principal.tscn"
+config/features=PackedStringArray("4.3", "Mobile")
+config/icon="res://icon.svg"
+
+[autoload]
+
+Global="*res://Score/Global.gd"
+
+[display]
+
+window/stretch/mode="viewport"
+
+[global_group]
+
+Player="personaje controlado por jugador"
+Basura="Objeto interactuable"
+organicos="caneca"
+aprovechable="caneca"
+"no aprovechable"="caneca"
+mouse=""
+zona_agarre_basura=""
+
+[rendering]
+
+renderer/rendering_method="mobile"
+textures/vram_compression/import_etc2_astc=true

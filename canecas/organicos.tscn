@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://b3w888fry7c6c"]
+
+[ext_resource type="Texture2D" uid="uid://bsefy27etum0v" path="res://icon.svg" id="1_q7xtf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q3g07"]
+size = Vector2(128, 128)
+
+[node name="organicos" type="Sprite2D" groups=["organicos"]]
+texture = ExtResource("1_q7xtf")
+
+[node name="zona_organica" type="Area2D" parent="." groups=["organicos"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="zona_organica"]
+shape = SubResource("RectangleShape2D_q3g07")
