@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Bazuma"
-run/main_scene="res://Escenas/escena_principal.tscn"
+run/main_scene="res://Escenas/nivel_base.tscn"
 config/features=PackedStringArray("4.3", "Mobile")
 config/icon="res://icon.svg"
 

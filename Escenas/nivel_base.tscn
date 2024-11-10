@@ -1,12 +1,12 @@
 [gd_scene load_steps=13 format=3 uid="uid://b4nd7ujhh6jvf"]
 
-[ext_resource type="PackedScene" uid="uid://s6ynfbabouu3" path="res://Jugador/player.tscn" id="1_tym0h"]
-[ext_resource type="Texture2D" uid="uid://bsefy27etum0v" path="res://icon.svg" id="2_j72yr"]
-[ext_resource type="PackedScene" uid="uid://b3w888fry7c6c" path="res://canecas/organicos.tscn" id="4_nrilj"]
-[ext_resource type="Script" path="res://Escenas/mouse.gd" id="4_w67yt"]
-[ext_resource type="PackedScene" uid="uid://cj5p5mxl0a5hh" path="res://canecas/aprovechables.tscn" id="5_3fo0g"]
-[ext_resource type="PackedScene" uid="uid://cgnlhi3swikgc" path="res://canecas/no_aprovechables.tscn" id="6_4pis1"]
-[ext_resource type="Script" path="res://Escenas/area_2d.gd" id="8_t5bry"]
+[ext_resource type="PackedScene" uid="uid://s6ynfbabouu3" path="res://Jugador/player.tscn" id="1_11ehl"]
+[ext_resource type="Script" path="res://Jugador/mouse.gd" id="2_32rc0"]
+[ext_resource type="Texture2D" uid="uid://bsefy27etum0v" path="res://icon.svg" id="3_0y2ia"]
+[ext_resource type="PackedScene" uid="uid://cj5p5mxl0a5hh" path="res://canecas/aprovechables.tscn" id="4_uj13o"]
+[ext_resource type="PackedScene" uid="uid://cgnlhi3swikgc" path="res://canecas/no_aprovechables.tscn" id="5_lnw37"]
+[ext_resource type="PackedScene" uid="uid://b3w888fry7c6c" path="res://canecas/organicos.tscn" id="6_w7obc"]
+[ext_resource type="Script" path="res://Objetos/area_2d.gd" id="7_7nvff"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_yyq26"]
 
@@ -53,11 +53,11 @@ size = Vector2(384, 64)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
-[node name="player" parent="." instance=ExtResource("1_tym0h")]
+[node name="player" parent="." instance=ExtResource("1_11ehl")]
 position = Vector2(0, 16)
 
 [node name="mouse" type="Area2D" parent="." groups=["mouse"]]
-script = ExtResource("4_w67yt")
+script = ExtResource("2_32rc0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="mouse" groups=["mouse"]]
 shape = SubResource("CircleShape2D_yyq26")
@@ -65,25 +65,25 @@ shape = SubResource("CircleShape2D_yyq26")
 [node name="lago" type="Sprite2D" parent="."]
 position = Vector2(0, 256)
 scale = Vector2(10, 1.5)
-texture = ExtResource("2_j72yr")
+texture = ExtResource("3_0y2ia")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="lago"]
 libraries = {
 "": SubResource("AnimationLibrary_matr1")
 }
 
-[node name="aprovechables" parent="." instance=ExtResource("5_3fo0g")]
+[node name="aprovechables" parent="." instance=ExtResource("4_uj13o")]
 position = Vector2(0, -216)
 
-[node name="no aprovechables" parent="." instance=ExtResource("6_4pis1")]
+[node name="no aprovechables" parent="." instance=ExtResource("5_lnw37")]
 position = Vector2(296, -128)
 
-[node name="organicos" parent="." instance=ExtResource("4_nrilj")]
+[node name="organicos" parent="." instance=ExtResource("6_w7obc")]
 position = Vector2(-296, -128)
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(896, 224)
-script = ExtResource("8_t5bry")
+script = ExtResource("7_7nvff")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(0, 32)
