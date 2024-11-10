@@ -52,7 +52,6 @@ size = Vector2(384, 96)
 [node name="Node2D" type="Node2D"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(0.5, 0.5)
 
 [node name="player" parent="." instance=ExtResource("1_11ehl")]
 position = Vector2(0, 16)
@@ -91,6 +90,7 @@ maxima_basura = 6
 shape = SubResource("RectangleShape2D_4rq47")
 
 [node name="Timer" type="Timer" parent="spawn"]
+wait_time = 2.0
 autostart = true
 
 [connection signal="timeout" from="spawn/Timer" to="spawn" method="_on_timer_timeout"]
