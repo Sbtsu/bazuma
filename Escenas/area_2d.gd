@@ -12,3 +12,5 @@ func inst_basura(pos):
 	var instance = basura.instantiate()
 	instance.position = pos
 	add_child(instance)
+
+# en este momento estamos resolviendo que las basuras se individualicen del area2d
