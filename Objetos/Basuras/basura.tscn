@@ -8,7 +8,7 @@ size = Vector2(64, 64)
 
 [node name="Basura" type="RigidBody2D" groups=["Basura"]]
 gravity_scale = 0.0
-constant_force = Vector2(-60, 0)
+constant_force = Vector2(-30, 0)
 script = ExtResource("1_300us")
 
 [node name="Icon" type="Sprite2D" parent="."]

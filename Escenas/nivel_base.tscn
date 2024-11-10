@@ -47,11 +47,12 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4rq47"]
-size = Vector2(384, 64)
+size = Vector2(384, 96)
 
 [node name="Node2D" type="Node2D"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.5, 0.5)
 
 [node name="player" parent="." instance=ExtResource("1_11ehl")]
 position = Vector2(0, 16)
@@ -81,10 +82,15 @@ position = Vector2(296, -128)
 [node name="organicos" parent="." instance=ExtResource("6_w7obc")]
 position = Vector2(-296, -128)
 
-[node name="Area2D" type="Area2D" parent="."]
-position = Vector2(896, 224)
+[node name="spawn" type="Area2D" parent="."]
+position = Vector2(1032, 256)
 script = ExtResource("7_7nvff")
+maxima_basura = 6
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0, 32)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="spawn"]
 shape = SubResource("RectangleShape2D_4rq47")
+
+[node name="Timer" type="Timer" parent="spawn"]
+autostart = true
+
+[connection signal="timeout" from="spawn/Timer" to="spawn" method="_on_timer_timeout"]
