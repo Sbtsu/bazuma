@@ -1,50 +1,25 @@
-[gd_scene load_steps=11 format=3 uid="uid://b4nd7ujhh6jvf"]
+[gd_scene load_steps=9 format=3 uid="uid://b4nd7ujhh6jvf"]
 
 [ext_resource type="PackedScene" uid="uid://s6ynfbabouu3" path="res://Jugador/player.tscn" id="1_11ehl"]
 [ext_resource type="PackedScene" uid="uid://bvm5fjdv1kyv5" path="res://Jugador/mouse.tscn" id="2_t3dya"]
-[ext_resource type="Texture2D" uid="uid://bsefy27etum0v" path="res://icon.svg" id="3_0y2ia"]
 [ext_resource type="PackedScene" uid="uid://cj5p5mxl0a5hh" path="res://canecas/aprovechables.tscn" id="4_uj13o"]
 [ext_resource type="PackedScene" uid="uid://cgnlhi3swikgc" path="res://canecas/no_aprovechables.tscn" id="5_lnw37"]
 [ext_resource type="PackedScene" uid="uid://b3w888fry7c6c" path="res://canecas/organicos.tscn" id="6_w7obc"]
+[ext_resource type="Texture2D" uid="uid://xsekwmsfnjow" path="res://Sprites/fondo_agua.png" id="7_6ji2b"]
 [ext_resource type="PackedScene" uid="uid://o0l43svjndx" path="res://Objetos/spawn.tscn" id="7_tynnx"]
-
-[sub_resource type="Animation" id="Animation_8rngo"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 256)]
-}
-
-[sub_resource type="Animation" id="Animation_a22gm"]
-resource_name = "lake"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0.0333333, 0.5, 1),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(0, 256), Vector2(0, 246), Vector2(0, 256)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_matr1"]
-_data = {
-"RESET": SubResource("Animation_8rngo"),
-"lake": SubResource("Animation_a22gm")
-}
+[ext_resource type="Texture2D" uid="uid://dtffmeait2ff5" path="res://Sprites/fondo_pasto.png" id="8_2y0c1"]
 
 [node name="Node2D" type="Node2D"]
+
+[node name="Rio" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(5, 5)
+texture = ExtResource("7_6ji2b")
+
+[node name="FondoPasto" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(5, 5)
+texture = ExtResource("8_2y0c1")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
@@ -52,16 +27,6 @@ _data = {
 position = Vector2(0, 16)
 
 [node name="mouse" parent="." instance=ExtResource("2_t3dya")]
-
-[node name="lago" type="Sprite2D" parent="."]
-position = Vector2(0, 256)
-scale = Vector2(10, 1.5)
-texture = ExtResource("3_0y2ia")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="lago"]
-libraries = {
-"": SubResource("AnimationLibrary_matr1")
-}
 
 [node name="aprovechables" parent="." instance=ExtResource("4_uj13o")]
 position = Vector2(0, -216)
