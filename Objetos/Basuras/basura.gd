@@ -16,6 +16,7 @@ func is_basura_clicked():
 	if is_clicked == true:
 		constant_force.x = 0
 		linear_velocity.x = 0
+		#position = get_global_mouse_position()
 
 func _physics_process(delta):
 	is_basura_clicked()

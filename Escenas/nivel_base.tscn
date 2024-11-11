@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://b4nd7ujhh6jvf"]
+[gd_scene load_steps=11 format=3 uid="uid://b4nd7ujhh6jvf"]
 
 [ext_resource type="PackedScene" uid="uid://s6ynfbabouu3" path="res://Jugador/player.tscn" id="1_11ehl"]
 [ext_resource type="PackedScene" uid="uid://bvm5fjdv1kyv5" path="res://Jugador/mouse.tscn" id="2_t3dya"]
@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cj5p5mxl0a5hh" path="res://canecas/aprovechables.tscn" id="4_uj13o"]
 [ext_resource type="PackedScene" uid="uid://cgnlhi3swikgc" path="res://canecas/no_aprovechables.tscn" id="5_lnw37"]
 [ext_resource type="PackedScene" uid="uid://b3w888fry7c6c" path="res://canecas/organicos.tscn" id="6_w7obc"]
-[ext_resource type="Script" path="res://Objetos/Basuras/spawn_basura.gd" id="7_7nvff"]
+[ext_resource type="PackedScene" uid="uid://o0l43svjndx" path="res://Objetos/spawn.tscn" id="7_tynnx"]
 
 [sub_resource type="Animation" id="Animation_8rngo"]
 length = 0.001
@@ -44,9 +44,6 @@ _data = {
 "lake": SubResource("Animation_a22gm")
 }
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_4rq47"]
-size = Vector2(384, 64)
-
 [node name="Node2D" type="Node2D"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -75,16 +72,5 @@ position = Vector2(296, -128)
 [node name="organicos" parent="." instance=ExtResource("6_w7obc")]
 position = Vector2(-296, -128)
 
-[node name="spawn" type="Area2D" parent="."]
-position = Vector2(1032, 256)
-script = ExtResource("7_7nvff")
-maxima_basura = 6
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="spawn"]
-shape = SubResource("RectangleShape2D_4rq47")
-
-[node name="Timer" type="Timer" parent="spawn"]
-wait_time = 2.0
-autostart = true
-
-[connection signal="timeout" from="spawn/Timer" to="spawn" method="_on_timer_timeout"]
+[node name="spawn" parent="." instance=ExtResource("7_tynnx")]
+position = Vector2(870, 256)
