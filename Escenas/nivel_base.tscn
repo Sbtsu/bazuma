@@ -80,7 +80,7 @@ position = Vector2(0, 16)
 [node name="mouse" parent="." instance=ExtResource("2_t3dya")]
 
 [node name="spawn" parent="." instance=ExtResource("7_tynnx")]
-position = Vector2(870, 256)
+position = Vector2(896, 240)
 
 [node name="caneca_organica" parent="." instance=ExtResource("6_vpahq")]
 position = Vector2(-256, -16)

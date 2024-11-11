@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Objetos/Basuras/spawn_basura.gd" id="1_n23tc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4rq47"]
-size = Vector2(384, 64)
+size = Vector2(384, 32)
 
 [node name="spawn" type="Area2D"]
 script = ExtResource("1_n23tc")
@@ -13,7 +13,7 @@ maxima_basura = 6
 shape = SubResource("RectangleShape2D_4rq47")
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 3.0
+wait_time = 4.0
 autostart = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -5,6 +5,8 @@ var basura_aprovechable_cerveza = preload("res://Objetos/Basuras/basura_aprovech
 var basura_aprovechable_plastico = preload("res://Objetos/Basuras/basura_aprovechable_plastico.tscn")
 var basura_organica_manzana = preload("res://Objetos/Basuras/basura_organica_manzana.tscn")
 
+@export var basura_pos_x = 32
+@export var basura_pos_y = 384
 @export var maxima_basura = 0
 var random_index_basura = 0
 
@@ -14,15 +16,15 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _on_timer_timeout() -> void:
-	var random_index_basura = randi() % 3
-	print(random_index_basura)
 	if Global.cantidad_basura < maxima_basura:
+		var random_index_basura = randi() % 3
+		print("index de basura actual es: ", random_index_basura)
 		if random_index_basura == 0:
-			inst_basura_organica_manzana(Vector2(randi() % 384, randi() % 64))
+			inst_basura_organica_manzana(Vector2(randi() % basura_pos_y, randi() % basura_pos_x))
 		elif random_index_basura == 1:
-			inst_basura_aprovechable_plastico(Vector2(randi() % 384, randi() % 64))
+			inst_basura_aprovechable_plastico(Vector2(randi() % basura_pos_y, randi() % basura_pos_x))
 		elif random_index_basura == 2:
-			inst_basura_aprovechable_cerveza(Vector2(randi() % 384, randi() % 64))
+			inst_basura_aprovechable_cerveza(Vector2(randi() % basura_pos_y, randi() % basura_pos_x))
 
 func inst_basura(pos):
 	var instance = basura_base.instantiate()

@@ -4,6 +4,14 @@ var mouse = preload("res://Jugador/mouse.tscn")
 @export var is_clicked = false
 @export var on_basura = false
 
+func _on_area_2d_mouse_entered() -> void:
+	on_basura = true
+	print("hola")
+
+func _on_area_2d_mouse_exited() -> void:
+	on_basura = false
+	print("adios")
+
 func _input(event):
 	if event is InputEventKey and event.pressed:
 		if event.keycode == KEY_T:
@@ -17,7 +25,6 @@ func when_basura_clicked():
 		constant_force.x = 0
 		linear_velocity.x = 0
 		#position = get_global_mouse_position()
-		# prueba
 
 func _physics_process(delta):
 	when_basura_clicked()
@@ -38,9 +45,7 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 		print("no aprovcechable")
 		print(Global.puntos)
 		queue_free()
-	if area.is_in_group("mouse"):
-		on_basura = true
 
 func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
-	queue_free()
+	#queue_free()
 	print("una basura salio de la pantalla")
