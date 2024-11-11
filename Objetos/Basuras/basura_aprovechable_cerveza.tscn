@@ -47,7 +47,7 @@ _data = {
 "flotando": SubResource("Animation_o82d3")
 }
 
-[node name="Basura" type="RigidBody2D" groups=["Basura"]]
+[node name="Basura_aprovechable_cerveza" type="RigidBody2D" groups=["Basura"]]
 position = Vector2(0, 8)
 gravity_scale = 0.0
 constant_force = Vector2(-30, 0)

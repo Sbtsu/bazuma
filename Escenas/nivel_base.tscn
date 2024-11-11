@@ -9,6 +9,21 @@
 [ext_resource type="Texture2D" uid="uid://dtffmeait2ff5" path="res://Sprites/fondo_pasto.png" id="8_2y0c1"]
 [ext_resource type="PackedScene" uid="uid://dn2njmvokct3h" path="res://canecas/caneca_aprovechable.tscn" id="8_pvcqx"]
 
+[sub_resource type="Animation" id="Animation_8yfv7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 8)]
+}
+
 [sub_resource type="Animation" id="Animation_iulyg"]
 resource_name = "lago"
 length = 2.0
@@ -24,21 +39,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector2(0, 8), Vector2(0, 16), Vector2(0, 8)]
-}
-
-[sub_resource type="Animation" id="Animation_8yfv7"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 8)]
 }
 
 [sub_resource type="Animation" id="Animation_ceh8w"]

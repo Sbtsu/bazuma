@@ -16,7 +16,6 @@ func when_basura_clicked():
 	if is_clicked == true:
 		constant_force.x = 0
 		linear_velocity.x = 0
-		is_clicked = false
 		#position = get_global_mouse_position()
 		# prueba
 
