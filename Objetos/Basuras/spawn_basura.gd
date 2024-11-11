@@ -4,6 +4,7 @@ var basura_base = preload("res://Objetos/Basuras/basura_base.tscn")
 var basura_aprovechable_cerveza = preload("res://Objetos/Basuras/basura_aprovechable_cerveza.tscn")
 var basura_aprovechable_plastico = preload("res://Objetos/Basuras/basura_aprovechable_plastico.tscn")
 var basura_organica_manzana = preload("res://Objetos/Basuras/basura_organica_manzana.tscn")
+var escena_principal = preload("res://Escenas/nivel_base.tscn")
 
 @export var basura_pos_x = 32
 @export var basura_pos_y = 384
@@ -53,5 +54,9 @@ func inst_basura_organica_manzana(pos):
 	add_child(instance)
 	Global.cantidad_basura += 1
 	print("el numero actual de basuras en la escena es: ", Global.cantidad_basura)
+
+func _on_area_exited(area: Area2D) -> void:
+	if area.is_in_group("Basura"):
+		remove_child(area)
 
 # en este momento estamos resolviendo que las basuras se individualicen del area2d

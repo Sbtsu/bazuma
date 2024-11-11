@@ -1,7 +1,6 @@
-[gd_scene load_steps=13 format=3 uid="uid://b4nd7ujhh6jvf"]
+[gd_scene load_steps=12 format=3 uid="uid://b4nd7ujhh6jvf"]
 
 [ext_resource type="PackedScene" uid="uid://s6ynfbabouu3" path="res://Jugador/player.tscn" id="1_11ehl"]
-[ext_resource type="PackedScene" uid="uid://bvm5fjdv1kyv5" path="res://Jugador/mouse.tscn" id="2_t3dya"]
 [ext_resource type="PackedScene" uid="uid://e7y3t7jl2q40" path="res://canecas/caneca_organica.tscn" id="6_vpahq"]
 [ext_resource type="Texture2D" uid="uid://xsekwmsfnjow" path="res://Sprites/fondo_agua.png" id="7_6ji2b"]
 [ext_resource type="PackedScene" uid="uid://dr6wo17dn1n56" path="res://canecas/caneca_no_aprovechable.tscn" id="7_cg1pv"]
@@ -76,8 +75,6 @@ texture = ExtResource("8_2y0c1")
 
 [node name="player" parent="." instance=ExtResource("1_11ehl")]
 position = Vector2(0, 16)
-
-[node name="mouse" parent="." instance=ExtResource("2_t3dya")]
 
 [node name="spawn" parent="." instance=ExtResource("7_tynnx")]
 position = Vector2(896, 240)

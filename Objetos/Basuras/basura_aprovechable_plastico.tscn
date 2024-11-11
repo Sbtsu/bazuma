@@ -47,12 +47,12 @@ _data = {
 "flotando": SubResource("Animation_o82d3")
 }
 
-[node name="Basura_aprovechable_plastico" type="RigidBody2D" groups=["Basura"]]
+[node name="Basura_aprovechable_plastico" type="RigidBody2D" groups=["Basura", "aprovechable"]]
 gravity_scale = 0.0
 constant_force = Vector2(-30, 0)
 script = ExtResource("1_dk4b1")
 
-[node name="Area2D" type="Area2D" parent="." groups=["Basura"]]
+[node name="Area2D" type="Area2D" parent="." groups=["Basura", "aprovechable"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_o20r8")
