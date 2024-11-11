@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://b4nd7ujhh6jvf"]
+[gd_scene load_steps=13 format=3 uid="uid://b4nd7ujhh6jvf"]
 
 [ext_resource type="PackedScene" uid="uid://s6ynfbabouu3" path="res://Jugador/player.tscn" id="1_11ehl"]
 [ext_resource type="PackedScene" uid="uid://bvm5fjdv1kyv5" path="res://Jugador/mouse.tscn" id="2_t3dya"]
@@ -9,15 +9,66 @@
 [ext_resource type="PackedScene" uid="uid://o0l43svjndx" path="res://Objetos/spawn.tscn" id="7_tynnx"]
 [ext_resource type="Texture2D" uid="uid://dtffmeait2ff5" path="res://Sprites/fondo_pasto.png" id="8_2y0c1"]
 
+[sub_resource type="Animation" id="Animation_iulyg"]
+resource_name = "lago"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 8), Vector2(0, 16), Vector2(0, 8)]
+}
+
+[sub_resource type="Animation" id="Animation_8yfv7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 8)]
+}
+
+[sub_resource type="Animation" id="Animation_ceh8w"]
+resource_name = "objetos_flotando"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rjhsf"]
+_data = {
+"RESET": SubResource("Animation_8yfv7"),
+"lago": SubResource("Animation_iulyg"),
+"objetos_flotando": SubResource("Animation_ceh8w")
+}
+
 [node name="Node2D" type="Node2D"]
 
 [node name="Rio" type="Sprite2D" parent="."]
 texture_filter = 1
+position = Vector2(0, 8)
 scale = Vector2(5, 5)
 texture = ExtResource("7_6ji2b")
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Rio"]
+libraries = {
+"": SubResource("AnimationLibrary_rjhsf")
+}
+autoplay = "lago"
+speed_scale = 0.5
+
 [node name="FondoPasto" type="Sprite2D" parent="."]
 texture_filter = 1
+position = Vector2(0, -8)
 scale = Vector2(5, 5)
 texture = ExtResource("8_2y0c1")
 

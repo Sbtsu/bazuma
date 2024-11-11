@@ -1,8 +1,8 @@
 extends RigidBody2D
 
 var mouse = preload("res://Jugador/mouse.tscn")
-var is_clicked = false
-var on_basura = false
+@export var is_clicked = false
+@export var on_basura = false
 
 func _input(event):
 	if event is InputEventKey and event.pressed:
@@ -12,15 +12,16 @@ func _input(event):
 		is_clicked = true
 		print("You clicked on Sprite!")
 
-func is_basura_clicked():
+func when_basura_clicked():
 	if is_clicked == true:
 		constant_force.x = 0
 		linear_velocity.x = 0
+		is_clicked = false
 		#position = get_global_mouse_position()
 		# prueba
 
 func _physics_process(delta):
-	is_basura_clicked()
+	when_basura_clicked()
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area.is_in_group("aprovechable"):
@@ -40,9 +41,7 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 		queue_free()
 	if area.is_in_group("mouse"):
 		on_basura = true
-	else:
-		on_basura = false
 
 func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
 	queue_free()
-	print("salio de la pantalla")
+	print("una basura salio de la pantalla")
