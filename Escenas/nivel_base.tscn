@@ -2,12 +2,12 @@
 
 [ext_resource type="PackedScene" uid="uid://s6ynfbabouu3" path="res://Jugador/player.tscn" id="1_11ehl"]
 [ext_resource type="PackedScene" uid="uid://bvm5fjdv1kyv5" path="res://Jugador/mouse.tscn" id="2_t3dya"]
-[ext_resource type="PackedScene" uid="uid://cj5p5mxl0a5hh" path="res://canecas/aprovechables.tscn" id="4_uj13o"]
-[ext_resource type="PackedScene" uid="uid://cgnlhi3swikgc" path="res://canecas/no_aprovechables.tscn" id="5_lnw37"]
-[ext_resource type="PackedScene" uid="uid://b3w888fry7c6c" path="res://canecas/organicos.tscn" id="6_w7obc"]
+[ext_resource type="PackedScene" uid="uid://e7y3t7jl2q40" path="res://canecas/caneca_organica.tscn" id="6_vpahq"]
 [ext_resource type="Texture2D" uid="uid://xsekwmsfnjow" path="res://Sprites/fondo_agua.png" id="7_6ji2b"]
+[ext_resource type="PackedScene" uid="uid://dr6wo17dn1n56" path="res://canecas/caneca_no_aprovechable.tscn" id="7_cg1pv"]
 [ext_resource type="PackedScene" uid="uid://o0l43svjndx" path="res://Objetos/spawn.tscn" id="7_tynnx"]
 [ext_resource type="Texture2D" uid="uid://dtffmeait2ff5" path="res://Sprites/fondo_pasto.png" id="8_2y0c1"]
+[ext_resource type="PackedScene" uid="uid://dn2njmvokct3h" path="res://canecas/caneca_aprovechable.tscn" id="8_pvcqx"]
 
 [sub_resource type="Animation" id="Animation_iulyg"]
 resource_name = "lago"
@@ -79,14 +79,14 @@ position = Vector2(0, 16)
 
 [node name="mouse" parent="." instance=ExtResource("2_t3dya")]
 
-[node name="aprovechables" parent="." instance=ExtResource("4_uj13o")]
-position = Vector2(0, -216)
-
-[node name="no aprovechables" parent="." instance=ExtResource("5_lnw37")]
-position = Vector2(296, -128)
-
-[node name="organicos" parent="." instance=ExtResource("6_w7obc")]
-position = Vector2(-296, -128)
-
 [node name="spawn" parent="." instance=ExtResource("7_tynnx")]
 position = Vector2(870, 256)
+
+[node name="caneca_organica" parent="." instance=ExtResource("6_vpahq")]
+position = Vector2(-256, -16)
+
+[node name="caneca_no_aprovechable" parent="." instance=ExtResource("7_cg1pv")]
+position = Vector2(256, -16)
+
+[node name="caneca_aprovechable" parent="." instance=ExtResource("8_pvcqx")]
+position = Vector2(0, -192)

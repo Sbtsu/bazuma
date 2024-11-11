@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://e7y3t7jl2q40"]
+
+[ext_resource type="Texture2D" uid="uid://caienmnm4wdqm" path="res://Sprites/canecas/canecas.png" id="1_0n6a4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8pcyn"]
+size = Vector2(128, 128)
+
+[node name="caneca_organica" type="Area2D" groups=["organicos"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_8pcyn")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(4, 4)
+texture = ExtResource("1_0n6a4")
+region_enabled = true
+region_rect = Rect2(0, 0, 31, 32)

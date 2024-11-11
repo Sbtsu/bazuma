@@ -18,11 +18,11 @@ func _on_timer_timeout() -> void:
 	print(random_index_basura)
 	if Global.cantidad_basura < maxima_basura:
 		if random_index_basura == 0:
-			inst_basura_organica_manzana(Vector2(randi() % 768, randi() % 64))
+			inst_basura_organica_manzana(Vector2(randi() % 384, randi() % 64))
 		elif random_index_basura == 1:
-			inst_basura_aprovechable_plastico(Vector2(randi() % 768, randi() % 64))
+			inst_basura_aprovechable_plastico(Vector2(randi() % 384, randi() % 64))
 		elif random_index_basura == 2:
-			inst_basura_aprovechable_cerveza(Vector2(randi() % 768, randi() % 64))
+			inst_basura_aprovechable_cerveza(Vector2(randi() % 384, randi() % 64))
 
 func inst_basura(pos):
 	var instance = basura_base.instantiate()
