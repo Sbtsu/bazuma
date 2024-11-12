@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://b4nd7ujhh6jvf"]
+[gd_scene load_steps=16 format=3 uid="uid://cx2mgogv5hbb8"]
 
 [ext_resource type="Script" path="res://Escenas/Niveles/nivel_manager.gd" id="1_3n5c5"]
 [ext_resource type="PackedScene" uid="uid://s6ynfbabouu3" path="res://Jugador/player.tscn" id="1_11ehl"]
@@ -143,4 +143,4 @@ position = Vector2(0, -192)
 
 [node name="spawn" parent="." instance=ExtResource("7_tynnx")]
 position = Vector2(896, 240)
-maxima_basura = 12
+basura_max = 6
