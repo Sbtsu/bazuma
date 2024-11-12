@@ -1,0 +1,83 @@
+[gd_scene load_steps=5 format=3 uid="uid://cx6ldo33g41ib"]
+
+[ext_resource type="Script" path="res://Escenas/Menu/menu.gd" id="1_j7r7x"]
+[ext_resource type="FontFile" uid="uid://bojgr6oo7quly" path="res://Escenas/UI/PixelifySans-VariableFont_wght.ttf" id="2_llx85"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jl6fh"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3d406"]
+bg_color = Color(0, 0, 0, 1)
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_j7r7x")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.501961, 0.25098, 1)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -192.0
+offset_top = 76.0
+offset_right = 6.0
+offset_bottom = 165.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2, 2)
+theme_override_constants/separation = 15
+
+[node name="play" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("2_llx85")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_jl6fh")
+text = "JUGAR"
+
+[node name="exit" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_llx85")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_3d406")
+text = "SALIR"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 296.0
+offset_top = 152.0
+offset_right = 376.0
+offset_bottom = 172.0
+scale = Vector2(10, 10)
+theme_override_fonts/normal_font = ExtResource("2_llx85")
+text = "BAZUMA"
+scroll_active = false
+autowrap_mode = 2
+text_direction = 1
+
+[connection signal="pressed" from="VBoxContainer/play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="VBoxContainer/exit" to="." method="_on_exit_pressed"]

@@ -12,17 +12,17 @@ config_version=5
 
 config/name="Bazuma"
 config/version="v.11.11.24-3 beta"
-run/main_scene="res://Escenas/nivel_base.tscn"
+run/main_scene="res://Escenas/Menu/menu.tscn"
 config/features=PackedStringArray("4.3", "Mobile")
 boot_splash/bg_color=Color(1, 1, 1, 1)
 boot_splash/image="res://UniLogo.png"
 boot_splash/fullsize=false
-config/icon="res://Sprites/player.png"
+config/icon="res://icont.png"
 boot_splash/minimum_display_time=2000
 
 [autoload]
 
-Global="*res://Score/Global.gd"
+Global="*res://Scripts/Global.gd"
 
 [display]
 

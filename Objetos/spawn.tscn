@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://o0l43svjndx"]
 
-[ext_resource type="Script" path="res://Objetos/Basuras/spawn_basura.gd" id="1_n23tc"]
+[ext_resource type="Script" path="res://Objetos/spawn_basura.gd" id="1_n23tc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4rq47"]
 size = Vector2(384, 32)
@@ -13,7 +13,7 @@ maxima_basura = 6
 shape = SubResource("RectangleShape2D_4rq47")
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 4.0
+wait_time = 2.0
 autostart = true
 
 [connection signal="area_exited" from="." to="." method="_on_area_exited"]

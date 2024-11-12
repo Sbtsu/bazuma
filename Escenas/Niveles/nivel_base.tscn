@@ -1,0 +1,146 @@
+[gd_scene load_steps=16 format=3 uid="uid://b4nd7ujhh6jvf"]
+
+[ext_resource type="Script" path="res://Escenas/Niveles/nivel_manager.gd" id="1_3n5c5"]
+[ext_resource type="PackedScene" uid="uid://s6ynfbabouu3" path="res://Jugador/player.tscn" id="1_11ehl"]
+[ext_resource type="PackedScene" uid="uid://e7y3t7jl2q40" path="res://canecas/caneca_organica.tscn" id="6_vpahq"]
+[ext_resource type="Texture2D" uid="uid://xsekwmsfnjow" path="res://Sprites/fondo_agua.png" id="7_6ji2b"]
+[ext_resource type="PackedScene" uid="uid://dr6wo17dn1n56" path="res://canecas/caneca_no_aprovechable.tscn" id="7_cg1pv"]
+[ext_resource type="PackedScene" uid="uid://o0l43svjndx" path="res://Objetos/spawn.tscn" id="7_tynnx"]
+[ext_resource type="Texture2D" uid="uid://dtffmeait2ff5" path="res://Sprites/fondo_pasto.png" id="8_2y0c1"]
+[ext_resource type="PackedScene" uid="uid://dn2njmvokct3h" path="res://canecas/caneca_aprovechable.tscn" id="8_pvcqx"]
+
+[sub_resource type="Animation" id="Animation_8yfv7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 8)]
+}
+
+[sub_resource type="Animation" id="Animation_iulyg"]
+resource_name = "lago"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 8), Vector2(0, 16), Vector2(0, 8)]
+}
+
+[sub_resource type="Animation" id="Animation_ceh8w"]
+resource_name = "objetos_flotando"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rjhsf"]
+_data = {
+"RESET": SubResource("Animation_8yfv7"),
+"lago": SubResource("Animation_iulyg"),
+"objetos_flotando": SubResource("Animation_ceh8w")
+}
+
+[sub_resource type="Animation" id="Animation_vi07t"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 192)]
+}
+
+[sub_resource type="Animation" id="Animation_kfb51"]
+resource_name = "pasto"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 192), Vector2(-4, 196), Vector2(0, 192)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ynjlg"]
+_data = {
+"RESET": SubResource("Animation_vi07t"),
+"pasto": SubResource("Animation_kfb51")
+}
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_3n5c5")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Rio" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(0, 8)
+scale = Vector2(5, 5)
+texture = ExtResource("7_6ji2b")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Rio"]
+libraries = {
+"": SubResource("AnimationLibrary_rjhsf")
+}
+autoplay = "lago"
+speed_scale = 0.5
+
+[node name="Pasto" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(0, -144)
+scale = Vector2(5, 5)
+texture = ExtResource("8_2y0c1")
+region_enabled = true
+region_rect = Rect2(0, 0, 256, 72)
+
+[node name="BordePasto" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(0, 192)
+scale = Vector2(5, 5)
+texture = ExtResource("8_2y0c1")
+region_enabled = true
+region_rect = Rect2(0, 64, 256, 64)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BordePasto"]
+libraries = {
+"": SubResource("AnimationLibrary_ynjlg")
+}
+autoplay = "pasto"
+speed_scale = 0.5
+
+[node name="player" parent="." instance=ExtResource("1_11ehl")]
+position = Vector2(0, 16)
+
+[node name="caneca_organica" parent="." instance=ExtResource("6_vpahq")]
+position = Vector2(-256, -16)
+
+[node name="caneca_no_aprovechable" parent="." instance=ExtResource("7_cg1pv")]
+position = Vector2(256, -16)
+
+[node name="caneca_aprovechable" parent="." instance=ExtResource("8_pvcqx")]
+position = Vector2(0, -192)
+
+[node name="spawn" parent="." instance=ExtResource("7_tynnx")]
+position = Vector2(896, 240)
+maxima_basura = 12

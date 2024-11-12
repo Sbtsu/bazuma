@@ -44,5 +44,6 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 		queue_free()
 
 func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
-	#queue_free()
-	print("una basura salio de la pantalla")
+	queue_free()
+	Global.cantidad_basura_perdida += 1
+	print("una basura salio de la pantalla: ", Global.cantidad_basura_perdida)

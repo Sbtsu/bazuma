@@ -3,8 +3,8 @@ extends Area2D
 var basura_base = preload("res://Objetos/Basuras/basura_base.tscn")
 var basura_aprovechable_cerveza = preload("res://Objetos/Basuras/basura_aprovechable_cerveza.tscn")
 var basura_aprovechable_plastico = preload("res://Objetos/Basuras/basura_aprovechable_plastico.tscn")
+var basura_no_aprovechable_amalgama = preload("res://Objetos/Basuras/basura_no_aprovechable_amalgama.tscn")
 var basura_organica_manzana = preload("res://Objetos/Basuras/basura_organica_manzana.tscn")
-var escena_principal = preload("res://Escenas/nivel_base.tscn")
 
 @export var basura_pos_x = 32
 @export var basura_pos_y = 384
@@ -25,7 +25,7 @@ func _on_timer_timeout() -> void:
 		elif random_index_basura == 1:
 			inst_basura_aprovechable_plastico(Vector2(randi() % basura_pos_y, randi() % basura_pos_x))
 		elif random_index_basura == 2:
-			inst_basura_aprovechable_cerveza(Vector2(randi() % basura_pos_y, randi() % basura_pos_x))
+			inst_basura_no_aprovechable_amalgama(Vector2(randi() % basura_pos_y, randi() % basura_pos_x))
 
 func inst_basura(pos):
 	var instance = basura_base.instantiate()
@@ -41,15 +41,15 @@ func inst_basura_aprovechable_plastico(pos):
 	Global.cantidad_basura += 1
 	print("el numero actual de basuras en la escena es: ", Global.cantidad_basura)
 
-func inst_basura_aprovechable_cerveza(pos):
-	var instance = basura_aprovechable_cerveza.instantiate()
+func inst_basura_organica_manzana(pos):
+	var instance = basura_organica_manzana.instantiate()
 	instance.position = pos
 	add_child(instance)
 	Global.cantidad_basura += 1
 	print("el numero actual de basuras en la escena es: ", Global.cantidad_basura)
 
-func inst_basura_organica_manzana(pos):
-	var instance = basura_organica_manzana.instantiate()
+func inst_basura_no_aprovechable_amalgama(pos):
+	var instance = basura_no_aprovechable_amalgama.instantiate()
 	instance.position = pos
 	add_child(instance)
 	Global.cantidad_basura += 1
