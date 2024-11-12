@@ -11,9 +11,14 @@ config_version=5
 [application]
 
 config/name="Bazuma"
+config/version="v.11.11.24-3 beta"
 run/main_scene="res://Escenas/nivel_base.tscn"
 config/features=PackedStringArray("4.3", "Mobile")
-config/icon="res://icon.svg"
+boot_splash/bg_color=Color(1, 1, 1, 1)
+boot_splash/image="res://UniLogo.png"
+boot_splash/fullsize=false
+config/icon="res://Sprites/player.png"
+boot_splash/minimum_display_time=2000
 
 [autoload]
 
