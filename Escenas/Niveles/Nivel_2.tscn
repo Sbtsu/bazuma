@@ -143,3 +143,4 @@ position = Vector2(0, -192)
 
 [node name="spawn" parent="." instance=ExtResource("7_rgfcf")]
 position = Vector2(896, 240)
+basura_max = 12

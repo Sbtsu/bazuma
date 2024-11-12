@@ -13,7 +13,7 @@ script = ExtResource("1_qjgmg")
 
 [node name="player-sprite" type="Sprite2D" parent="."]
 rotation = 1.5708
-scale = Vector2(3, 3)
+scale = Vector2(4, 4)
 texture = ExtResource("2_7gxso")
 
 [node name="Area2D" type="Area2D" parent="." groups=["Player"]]
