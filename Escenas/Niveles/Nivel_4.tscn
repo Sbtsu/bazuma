@@ -139,7 +139,7 @@ position = Vector2(-256, -16)
 position = Vector2(0, -232)
 
 [node name="caneca_aprovechable" parent="." instance=ExtResource("7_n707n")]
-position = Vector2(-264, -64)
+position = Vector2(256, -16)
 
 [node name="spawn" parent="." instance=ExtResource("8_u8m56")]
 position = Vector2(896, 240)
