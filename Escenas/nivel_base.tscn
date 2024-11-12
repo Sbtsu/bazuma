@@ -89,6 +89,9 @@ _data = {
 
 [node name="Node2D" type="Node2D"]
 
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.5, 0.5)
+
 [node name="Rio" type="Sprite2D" parent="."]
 texture_filter = 1
 position = Vector2(0, 8)
@@ -125,13 +128,8 @@ libraries = {
 autoplay = "pasto"
 speed_scale = 0.5
 
-[node name="Camera2D" type="Camera2D" parent="."]
-
 [node name="player" parent="." instance=ExtResource("1_11ehl")]
 position = Vector2(0, 16)
-
-[node name="spawn" parent="." instance=ExtResource("7_tynnx")]
-position = Vector2(896, 240)
 
 [node name="caneca_organica" parent="." instance=ExtResource("6_vpahq")]
 position = Vector2(-256, -16)
@@ -141,3 +139,6 @@ position = Vector2(256, -16)
 
 [node name="caneca_aprovechable" parent="." instance=ExtResource("8_pvcqx")]
 position = Vector2(0, -192)
+
+[node name="spawn" parent="." instance=ExtResource("7_tynnx")]
+position = Vector2(896, 240)

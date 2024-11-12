@@ -1,6 +1,6 @@
 extends RigidBody2D
 
-var mouse = preload("res://Jugador/mouse.tscn")
+
 @export var is_clicked = false
 @export var on_basura = false
 
@@ -21,7 +21,7 @@ func when_basura_clicked():
 	if is_clicked == true:
 		constant_force.x = 0
 		linear_velocity.x = 0
-		#position = get_global_mouse_position()
+		position = get_global_mouse_position() - Vector2(896, 240)
 
 func _physics_process(delta):
 	when_basura_clicked()
