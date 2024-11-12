@@ -88,7 +88,7 @@ _data = {
 "pasto": SubResource("Animation_kfb51")
 }
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D2" type="Node2D"]
 script = ExtResource("1_65k0q")
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -136,10 +136,10 @@ position = Vector2(0, 16)
 position = Vector2(-256, -16)
 
 [node name="caneca_no_aprovechable" parent="." instance=ExtResource("6_3ejp5")]
-position = Vector2(256, -16)
+position = Vector2(0, -232)
 
 [node name="caneca_aprovechable" parent="." instance=ExtResource("7_n707n")]
-position = Vector2(0, -192)
+position = Vector2(-264, -64)
 
 [node name="spawn" parent="." instance=ExtResource("8_u8m56")]
 position = Vector2(896, 240)

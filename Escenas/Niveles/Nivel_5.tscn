@@ -133,13 +133,14 @@ speed_scale = 0.5
 position = Vector2(0, 16)
 
 [node name="caneca_organica" parent="." instance=ExtResource("5_yy4x2")]
-position = Vector2(-256, -16)
+position = Vector2(-350, -64)
 
 [node name="caneca_no_aprovechable" parent="." instance=ExtResource("6_iyury")]
-position = Vector2(256, -16)
+position = Vector2(350, -64)
 
 [node name="caneca_aprovechable" parent="." instance=ExtResource("7_3lpiv")]
-position = Vector2(0, -192)
+position = Vector2(0, -248)
 
 [node name="spawn" parent="." instance=ExtResource("8_jmnyf")]
 position = Vector2(896, 240)
+basura_max = 30
