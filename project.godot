@@ -32,6 +32,9 @@ aprovechable="caneca"
 "no aprovechable"="caneca"
 mouse=""
 zona_agarre_basura=""
+caneca_aprovechable=""
+caneca_no_aprovechable=""
+caneca_organica=""
 
 [rendering]
 
